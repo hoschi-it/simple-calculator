@@ -8,15 +8,18 @@
     <body>
         <div id="app">
             <input :value="input"
-                    type="text" 
+                    type="text"
+                    class="showCalc"
                     disabled 
                 />
-            <button v-for="btn in buttons"
-                    type="submit"
-                    @click.prevent="write(btn)"
-                >
-                {{ btn }}
-            </button>
+            <div class="controls">
+                <button v-for="btn in buttons"
+                        type="submit"
+                        @click.prevent="write(btn)"
+                    >
+                    {{ btn }}
+                </button>
+            </div>
         </div>
 
         <script src="./vendor/vue.js"></script>

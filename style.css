@@ -1,0 +1,19 @@
+#app {
+    width: 400px;
+    background-color: red;
+}
+
+.showCalc {
+    font-size: 2em;
+    width: 100%;
+}
+
+.controls {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 3px;
+}
+
+.controls button {
+    font-size: 2em;
+}
