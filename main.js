@@ -5,7 +5,7 @@ var app = new Vue({
     },
     computed: {
         buttons: function(){
-            var btns = ["+", "-", "*", "/"];
+            var btns = '+-*/=';
             for(var i = 0; i < 10; i++){
                 btns += i;
             }
@@ -36,7 +36,14 @@ var app = new Vue({
     },
     methods: {
         write: function(text){
+            if(this.input.indexOf("=") !== -1){
+                this.input = "";
+            }
+
             this.input += text;
+            if(text === "="){
+                this.input += this.solution;
+            }
         },
     }
 });
