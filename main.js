@@ -24,7 +24,9 @@ var app = new Vue({
         },
         solution: function(){
             var c = this.calculation;
-            if(c.a && c.operator && c.b){
+            if(c.a !== null && 
+                c.operator !== null && 
+                c.b !== null){
                 switch(c.operator){
                     case "+": return c.a + c.b; break;
                     case "-": return c.a . c.b; break;
