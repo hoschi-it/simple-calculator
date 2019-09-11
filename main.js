@@ -12,28 +12,12 @@ var app = new Vue({
             return btns;
         },
         calculation: function(){
-            var calc = {"a": null, "operator": null, "b": null};
-            var regex = /([0-9\.]*)([\+\-\*\/]{1})([0-9\.]*)/
-            var match = this.input.match(regex);
-            if(match){
-                calc.a = parseFloat( match[1]);
-                calc.operator = match[2];
-                calc.b = parseFloat(match[3]);
-            }
-            return calc;
+            return this.input;
         },
         solution: function(){
             var c = this.calculation;
-            if(c.a !== null && 
-                c.operator !== null && 
-                c.b !== null){
-                switch(c.operator){
-                    case "+": return c.a + c.b; break;
-                    case "-": return c.a . c.b; break;
-                    case "*": return c.a * c.b; break;
-                    case "/": return c.a / c.b; break;
-                }
-            }
+            var calc = new Calculator(c);
+            return calc.solution;
         }
     },
     methods: {
